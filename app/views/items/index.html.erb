@@ -29,7 +29,7 @@
         <td><%= item.item_url %></td>
         <td><%= item.vendor.vendor_name %></td>
         <td><%= item.image_url %></td>
-        <td><%= item.user_id %></td>
+        <td><%= item.user.email %></td>
         <td>
           <a href="/items/<%= item.id %>" class="btn btn-primary">Show</a>
           <a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
