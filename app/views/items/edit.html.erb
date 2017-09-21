@@ -69,7 +69,7 @@
           Vendor
         </label>
 
-        <input type="text" id="vendor_id" name="vendor_id" placeholder="Vendor" class="form-control" value="<%= @item.vendor_id %>">
+        <%= select_tag(:vendor_id, options_from_collection_for_select(Vendor.all, :id, :vendor_name, @item.vendor_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for image_url -->
