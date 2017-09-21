@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Vendor resource:
+  # CREATE
+  get "/vendors/new", :controller => "vendors", :action => "new"
+  post "/create_vendor", :controller => "vendors", :action => "create"
+
+  # READ
+  get "/vendors", :controller => "vendors", :action => "index"
+  get "/vendors/:id", :controller => "vendors", :action => "show"
+
+  # UPDATE
+  get "/vendors/:id/edit", :controller => "vendors", :action => "edit"
+  post "/update_vendor/:id", :controller => "vendors", :action => "update"
+
+  # DELETE
+  get "/delete_vendor/:id", :controller => "vendors", :action => "destroy"
+  #------------------------------
+
   # Routes for the Item resource:
   # CREATE
   get "/items/new", :controller => "items", :action => "new"
