@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-  before_action :current_user_must_be_follow_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_follow_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_follow_user
     follow = Follow.find(params[:id])
