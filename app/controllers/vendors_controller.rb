@@ -6,6 +6,7 @@ class VendorsController < ApplicationController
   end
 
   def show
+    @item = Item.new
     @vendor = Vendor.find(params[:id])
 
     render("vendors/show.html.erb")

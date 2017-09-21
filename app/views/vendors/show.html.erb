@@ -51,6 +51,77 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_item" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for item_name -->
+      <div class="form-group">
+        <label for="item_name" class="control-label">
+          Item name
+        </label>
+
+        <input type="text" id="item_name" name="item_name" placeholder="Item name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for quantity_wanted -->
+      <div class="form-group">
+        <label for="quantity_wanted" class="control-label">
+          Quantity wanted
+        </label>
+
+        <input type="text" id="quantity_wanted" name="quantity_wanted" placeholder="Quantity wanted" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for quantity_received -->
+      <div class="form-group">
+        <label for="quantity_received" class="control-label">
+          Quantity received
+        </label>
+
+        <input type="text" id="quantity_received" name="quantity_received" placeholder="Quantity received" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for item_url -->
+      <div class="form-group">
+        <label for="item_url" class="control-label">
+          Item url
+        </label>
+
+        <input type="text" id="item_url" name="item_url" placeholder="Item url" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for vendor_id -->
+      <input type="hidden" name="vendor_id" value="<%= @vendor.id %>">
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Item
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
