@@ -33,7 +33,7 @@
           Following
         </label>
 
-        <input type="text" id="following_id" name="following_id" placeholder="Following" class="form-control" value="<%= @follow.following_id %>">
+        <%= select_tag(:following_id, options_from_collection_for_select(User.all, :id, :email, @follow.following_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
