@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = current_user.items.page(params[:page]).per(10)
 
     render("items/index.html.erb")
   end
