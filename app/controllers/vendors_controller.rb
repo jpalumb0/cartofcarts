@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.page(params[:page]).per(10)
 
     render("vendors/index.html.erb")
   end
